@@ -1,8 +1,8 @@
 # AIT-511-Course-Project-2
 
 ## Team Details
-* **Member 1:** [Pratheek P] (MS2025010)
-* **Member 2:** [Abu Talha] (MT2025703)
+* **Member 1:** Pratheek P (MS2025010)
+* **Member 2:** Abu Talha (MT2025703)
 
 ## Project Description
 This project involves building machine learning models for two datasets:
