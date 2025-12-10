@@ -51,6 +51,30 @@ coverage.xml
 .pytest_cache/
 cover/
 
+# --- Data ---
+# Ignore everything in the data folder, but keep the folder itself
+data/*
+!data/.gitkeep
+
+# --- Models ---
+# Ignore large model files
+models/*.pkl
+models/*.h5
+models/*.joblib
+
+# --- Jupyter/Python ---
+# Ignore notebook checkpoint folders
+.ipynb_checkpoints/
+__pycache__/
+
+# --- VS Code / System ---
+.DS_Store
+.vscode/
+
+# --- Environment ---
+env/
+venv/
+
 # Translations
 *.mo
 *.pot
