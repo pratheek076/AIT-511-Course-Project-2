@@ -1,26 +1,51 @@
-# AIT-511-Course-Project-2
+# AIT-511 Machine Learning Project 2
 
-## Team Details
-* **Member 1:** Pratheek P (MS2025010)
-* **Member 2:** Abu Talha (MT2025703)
+**Team Members:**
+* Pratheek P (MS2025010)
+* Abu Talha (MT2025703)
 
-## Project Description
-This project involves building machine learning models for two datasets:
-1.  **Smoker Status Prediction** (Binary Classification)
-2.  **Forest Cover Type** (Multiclass Classification)
+## Project Overview
+This project implements and evaluates machine learning models for two distinct classification challenges:
+
+1.  **Smoker Status Prediction (Binary Classification):**
+    * **Goal:** Predict whether a patient is a smoker based on bio-signals (blood pressure, cholesterol, etc.).
+    * **Challenge:** Detecting positive cases (Recall) in a health context.
+    * **Winner:** Neural Network.
+
+2.  **Forest Cover Type (Multiclass Classification):**
+    * **Goal:** Classify forest areas into 7 distinct tree types (Spruce, Pine, Aspen, etc.) using cartographic variables.
+    * **Challenge:** Severe class imbalance (Class 1 & 2 dominate) and non-linear feature interactions.
+    * **Winner:** Neural Network.
 
 ## Repository Structure
-* `data/`: Contains dataset files (excluded from version control).
-* `notebooks/`: Jupyter notebooks for EDA, preprocessing, and modeling.
-* `models/`: Saved model files.
-* `images/`: Plots and graphs generated during EDA.
+* `notebooks/`:
+    * `Smoker Status Prediction.ipynb`: Complete analysis for the Smoker dataset.
+    * `Forest_Cover_Type.ipynb`: Complete analysis for the Forest Cover dataset.
+* `images/`: Visualizations generated during EDA and model evaluation.
+* `README.md`: Project documentation.
 
-## Instructions to Run
-1.  Clone the repository.
-2.  Install dependencies: `pip install -r requirements.txt`
-3.  Download datasets from Kaggle (links below) and place them in the `data/` folder.
-4.  Run `notebooks/main_analysis.ipynb`.
+## How to Run (Google Colab)
+This project was designed for **Google Colab**. Follow these steps to reproduce our results:
 
-## Datasets
-1.  [Smoker Status Prediction](https://www.kaggle.com/datasets/gauravduttakiit/smoker-status-prediction-using-biosignals)
-2.  [Forest Cover Type](https://www.kaggle.com/datasets/uciml/forest-cover-type-dataset)
+### 1. Download Data
+Get the datasets from Kaggle:
+* **Smoker Dataset:** [Download Here](https://www.kaggle.com/datasets/gauravduttakiit/smoker-status-prediction-using-biosignals) -> Save as `train_dataset.csv`
+* **Forest Dataset:** [Download Here](https://www.kaggle.com/datasets/uciml/forest-cover-type-dataset) -> Save as `covtype.csv`
+
+### 2. Launch Notebooks
+Upload the `.ipynb` files from the `notebooks/` folder to [Google Colab](https://colab.research.google.com/).
+
+### 3. Upload Data to Runtime
+**Critical Step:** The notebooks read files from the local environment.
+1.  In Colab, open the **Files** sidebar.
+2.  Drag and drop `train_dataset.csv` (for Smoker notebook) or `covtype.csv` (for Forest notebook).
+3.  Wait for the upload to complete.
+
+### 4. Execute
+Go to **Runtime** > **Run all**.
+The notebook will automatically perform data cleaning, feature engineering, hyperparameter tuning, and final evaluation.
+
+## Methodology
+* **Preprocessing:** Log-transformations for skewed features, circular encoding for aspect angles, and standard scaling.
+* **Tuning Strategy:** `RandomizedSearchCV` on a stratified subset (10k-25k samples) to efficiently find optimal hyperparameters.
+* **Models:** Logistic Regression (Baseline), Support Vector Machines (SVM), and Neural Networks (MLP).
